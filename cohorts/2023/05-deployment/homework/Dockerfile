@@ -4,6 +4,6 @@ RUN pip install pipenv
 COPY ["Pipfile", "Pipfile.lock", "./"]
 RUN pipenv install --system --deploy
 
-COPY ["q6_predict.py", "./"]
+COPY ["score.py", "./"]
 EXPOSE 9696
-ENTRYPOINT ["waitress-serve", "--listen=0.0.0.0:9696", "q6_predict:app"]
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "score:app"]
