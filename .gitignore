@@ -10,6 +10,10 @@ __pycache__/
 *.tflite
 *.zip
 *.pdf
+*.csv
+*.data
+*.names
+*.test
 
 # data folders
 **data/
